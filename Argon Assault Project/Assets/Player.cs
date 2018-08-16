@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float positionPitchFactor = -5f; //what you multiply position by to get pitch
     [SerializeField] float controlPitchFactor = -20f;
 
-    [SerializeField] float positionYawFactor = 5f;
+    [SerializeField] float positionYawFactor = 1f;
 
     [SerializeField] float controlRollFactor = -20f;
 
