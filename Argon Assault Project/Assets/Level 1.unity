@@ -405,6 +405,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ae8a5e308297349830e6c6e5d44021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  xRange: 5
+  yRange: 5
+  positionPitchFactor: -5
+  controlPitchFactor: -20
+  positionYawFactor: 5
+  controlRollFactor: -20
 --- !u!4 &1267916797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4167071876953660, guid: 291d3678cc371a84bba6d8275b4fd7ca,
