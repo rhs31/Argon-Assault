@@ -4,37 +4,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
-    [Tooltip("In meters per second")][SerializeField] float speed = 10f;
+    [Header("General")]
+    [Tooltip("In meters per second")][SerializeField] float controlSpeed = 10f;
     [Tooltip("In meters per second")] [SerializeField] float xRange = 5f;
     [Tooltip("In meters per second")] [SerializeField] float yRange = 5f;
 
+    [Header("Screen-position based")]
     [SerializeField] float positionPitchFactor = -5f; //what you multiply position by to get pitch
-    [SerializeField] float controlPitchFactor = -20f;
-
     [SerializeField] float positionYawFactor = 1f;
 
+    [Header("Control-throw based")]
+    [SerializeField] float controlPitchFactor = -20f;
     [SerializeField] float controlRollFactor = -20f;
 
     float xThrow, yThrow;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        print("Player triggered something");
-    }
+    bool isControlEnabled = true;
+    
 
     // Update is called once per frame
     void Update ()
     {
-        ProcessTranslation();
-        ProcessRotation();
+        if(isControlEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
 
+    }
+    void OnPlayerDeath() // called by string reference
+    {
+        isControlEnabled = false;
     }
 
     private void ProcessRotation()
@@ -56,8 +57,8 @@ public class Player : MonoBehaviour {
         xThrow = CrossPlatformInputManager.GetAxis("Horizontal"); //how far is the gamepad stick thrown to one side (+) or the other side (-) (goes between 0 and 1)
         yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
-        float xOffset = xThrow * speed * Time.deltaTime; //how many meters to move in this frame
-        float yOffset = yThrow * speed * Time.deltaTime;
+        float xOffset = xThrow * controlSpeed * Time.deltaTime; //how many meters to move in this frame
+        float yOffset = yThrow * controlSpeed * Time.deltaTime;
 
         float rawXPos = transform.localPosition.x + xOffset; //clamp x position
         float clampedXPos = Mathf.Clamp(rawXPos, -xRange, xRange);
