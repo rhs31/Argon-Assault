@@ -8,9 +8,9 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
     [SerializeField] int scorePerHit = 12;
+    [SerializeField] int hits = 3;
 
     ScoreBoard scoreBoard;
-    bool hasBeenHit = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,14 +25,23 @@ public class Enemy : MonoBehaviour {
     }
     private void OnParticleCollision(GameObject other)
     {
-        if(!hasBeenHit) // stops the game from doing two particle hits on the same enemy
+        ProcessHit();
+        if (hits <= 1)
         {
-            hasBeenHit = true;
-            scoreBoard.ScoreHit(scorePerHit);
-            GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-            fx.transform.parent = parent; // set parent object
-            Destroy(gameObject);
+            KillEnemy();
         }
-        
+    }
+
+    private void ProcessHit()
+    {
+        hits--;
+        scoreBoard.ScoreHit(scorePerHit);
+    }
+
+    private void KillEnemy()
+    {
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parent; // set parent object
+        Destroy(gameObject);
     }
 }
