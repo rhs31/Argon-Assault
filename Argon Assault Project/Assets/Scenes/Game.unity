@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1686763614862688, guid: 0053695c2ebcc35419f2dd4d060b4736, type: 2}
   parent: {fileID: 2125691628}
+  scorePerHit: 12
 --- !u!1 &201424647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4807,6 +4808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1686763614862688, guid: 0053695c2ebcc35419f2dd4d060b4736, type: 2}
   parent: {fileID: 2125691628}
+  scorePerHit: 12
 --- !u!1 &448023985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
@@ -4825,6 +4827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1686763614862688, guid: 0053695c2ebcc35419f2dd4d060b4736, type: 2}
   parent: {fileID: 2125691628}
+  scorePerHit: 12
 --- !u!1 &569436286
 GameObject:
   m_ObjectHideFlags: 0
@@ -10108,6 +10111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1686763614862688, guid: 0053695c2ebcc35419f2dd4d060b4736, type: 2}
   parent: {fileID: 2125691628}
+  scorePerHit: 12
 --- !u!1 &1080423453
 GameObject:
   m_ObjectHideFlags: 0
@@ -14805,10 +14809,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -15072,7 +15076,7 @@ GameObject:
   - component: {fileID: 1469605243}
   - component: {fileID: 1469605245}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15147,7 +15151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a3dd52acdab0347b1ebfb67425bf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePerHit: 12
 --- !u!1 &1609420637
 GameObject:
   m_ObjectHideFlags: 0
@@ -15371,6 +15374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1686763614862688, guid: 0053695c2ebcc35419f2dd4d060b4736, type: 2}
   parent: {fileID: 2125691628}
+  scorePerHit: 12
 --- !u!4 &1903280035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4354848751893472, guid: bf374732b0ea2c34daa340dc2de7f746,
@@ -15552,6 +15556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1686763614862688, guid: 0053695c2ebcc35419f2dd4d060b4736, type: 2}
   parent: {fileID: 2125691628}
+  scorePerHit: 12
 --- !u!1001 &2041956121
 Prefab:
   m_ObjectHideFlags: 0

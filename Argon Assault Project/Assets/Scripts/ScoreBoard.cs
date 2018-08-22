@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour {
 
-    [SerializeField] int scorePerHit = 12;
+    
 
     int score;
     Text scoreText;
@@ -15,8 +15,9 @@ public class ScoreBoard : MonoBehaviour {
         scoreText = GetComponent<Text>(); // entire game component
         scoreText.text = score.ToString(); // change the actual text (string) piece of Text component.
 	}
-	public void ScoreHit()
+	public void ScoreHit(int scoreIncrease)
     {
-        score = score + scorePerHit;
+        score = score + scoreIncrease;
+        scoreText.text = score.ToString();
     }
 }

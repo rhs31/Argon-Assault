@@ -18,7 +18,8 @@ public class CollisionHandler : MonoBehaviour {
 
     private void StartDeathSequence()
     {
-        SendMessage("OnPlayerDeath"); // send message is like delegate, it is a reflection system (see lec. 105)
+        // send message is like delegate, it is a reflection system (see lec. 105) which sends message to all other components, triggering this method if they have it
+        SendMessage("OnPlayerDeath"); 
     }
     private void ReloadScene() // string referenced
     {
